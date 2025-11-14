@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-14_16-04-44",
+            "content": "class Pessoa:\n    def __init__(self, nome:str ,idade:int):\n        self.nome = nome\n        self.idade = idade\n    def __str__(self) -> str:\n        return f\"{self.nome}:{self.idade}\"\nclass Pula:\n    def __init__(self):\n        self.brincando: list[Pessoa] = []\n        self.fila: list[Pessoa] = []\n    \n    def FilaBrincar (self, nome: Pessoa):\n        self.fila.append(nome)\n        return\n    \n    def Proximo (self):\n        proximo = self.fila.pop(0)\n        self.brincando.append(proximo)\n\n    def Sair(self):\n        sair = self.brincando.pop(0)\n        self.fila.append(sair)\n\n    def Remover (self):\n        \n        ",
+            "lines": "26"
+        }
+    ]
+}

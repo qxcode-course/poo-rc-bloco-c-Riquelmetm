@@ -59,3 +59,13 @@
 2025-11-14 14:16:02, SELF, v:1, k:poo@budega, rate:100, human:Ajuda_de_amigo, iagen:Ajuda_para_saber_como_funcionava_as_novas_funcoes_das_questoes, alone:10, study:700
 2025-11-14 14:17:24, MOVE, v:1, k:poo@lapiseira, mode:PICK
 2025-11-14 14:35:11, MOVE, v:1, k:poo@lapiseira, mode:BACK
+2025-11-14 14:49:36, MOVE, v:1, k:poo@lapiseira, mode:PICK
+2025-11-14 14:49:36, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0, size:116
+2025-11-14 14:50:10, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0
+2025-11-14 14:50:24, EXEC, v:1, k:poo@lapiseira, mode:FULL, rate:0, size:116
+2025-11-14 15:32:40, MOVE, v:1, k:poo@lapiseira, mode:BACK
+2025-11-14 15:32:50, MOVE, v:1, k:poo@lapiseira, mode:PICK
+2025-11-14 15:32:51, MOVE, v:1, k:poo@lapiseira, mode:BACK
+2025-11-14 16:04:43, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-14 16:04:44, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:0, size:26
+2025-11-14 16:04:45, MOVE, v:1, k:poo@pula-pula, mode:BACK

@@ -48,7 +48,7 @@ class Mercantil:
             print("fail: caixa inexistente")
 
 def main():
-    mercantil = None
+    mercantil = Mercantil(0)
     pessoa = None
     while True:
         line: str = input()
