@@ -23,12 +23,35 @@ class Mercantil:
         strFilaFinal: str = "[" +", ".join(fila) + "]"
         return f"Caixa: {strCaixasFinal}\nEspera: {strFilaFinal}"
     
-    def 
-    
-    def adicionar (self, nome: Pessoa | None, posicao: int ):
-        if self.caixa[posicao] is None:
-            self.caixa[posicao] = nome
+    def chegar (self, nome: Pessoa):
+        self.fila.append(nome)
+
+    def chamar(self):
+        if not self.fila:
+            print("fail: sem clientes")
+        elif self.caixa[0]:
+            print("fail: caixa ocupado")
         else:
-           print("ja tem gente")
-        return 
+            self.caixa.append(self.fila[0])
+            self.fila.pop(0)
+
+    def finalizar (self, number: int):
+        if number == len(self.caixa):
+            if not self.caixa:
+                print("fail: caixa vazio")
+            else:
+                self.caixa.pop(number)
+        else:
+            print("fail: caixa inexistente")
+
+
+
+
+
+    # def adicionar (self, nome: Pessoa | None, posicao: int ):
+    #     if self.caixa[posicao] is None:
+    #         self.caixa[posicao] = nome
+    #     else:
+    #        print("ja tem gente")
+    #     return 
         
