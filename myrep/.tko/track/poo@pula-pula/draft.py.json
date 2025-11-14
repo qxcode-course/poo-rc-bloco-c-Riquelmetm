@@ -62,8 +62,28 @@
         },
         {
             "label": "2025-11-14_22-39-35",
-            "content": "class Pessoa:\n    def __init__(self, nome:str ,idade:int):\n        self.nome = nome\n        self.idade = idade\n    def getnome (self):\n        return self.nome\n    def getidade (self):\n        return self.idade\n    def __str__(self) -> str:\n\n        return f\"{self.getnome()}:{self.getidade()}\"\nclass Pula:\n    def __init__(self):\n        self.brincando: list[Pessoa] = []\n        self.fila: list[Pessoa] = []\n    \n    def __str__(self) -> str:\n            fila_str = \", \".join([str(p) for p in self.fila[::-1]])\n            \n            brincando_str = \", \".join([str(p) for p in self.brincando])\n\n            return f\"[{fila_str}] => [{brincando_str}]\"\n\n    def FilaBrincar (self, nome: Pessoa):\n        self.fila.append(nome)\n        return\n    \n    def Proximo (self):\n        proximo = self.fila.pop(0)\n        self.brincando.append(proximo)\n\n    def Sair(self):\n        sair = self.brincando.pop(0)\n        self.fila.append(sair)\n        return\n\n    def Remover (self, nome: str):\n        for i in range (len(self.brincando)):\n            crianca = self.brincando[i]\n            if crianca.getnome() == nome:\n                self.brincando.pop(i)\n                return\n        print(f\"fail: {nome} nao esta no pula-pula\")\n        \n        for i in range (len(self.fila)):\n            crianca = self.fila[i]\n            if crianca.getnome() == nome:\n                self.fila.pop(i)\n                return\n            print(f\"fail: {nome} nao esta na fila\")\n            return\n\n\n        \npulapula = Pula()\n    \ndef main():\n    while True:\n        line: str = input()\n        print(\"$\" + line)\n        args: list[str] = line.split(\" \")\n\n        if args[0] == \"arrive\":\n            nome = Pessoa(args[1], int(args[2]))\n            pulapula.FilaBrincar(nome)\n        \n        elif args[0] == \"show\":\n            print(pulapula)\n\n        elif args[0] == \"enter\":\n            pulapula.Proximo()\n\n        elif args[0] == \"leave\":\n            pulapula.Sair()\n        \n        elif args[0] == \"remove\":\n            nome = args[1]\n            pulapula.Remover(nome)\n        \n        elif args[0] == \"end\":\n            break\nmain()",
+            "content": "@@ -588,22 +588,16 @@\n rincando\n-%5B::-1%5D\n %5D)%0A%0A    \n",
             "lines": "82"
+        },
+        {
+            "label": "2025-11-14_22-42-43",
+            "content": "@@ -1167,32 +1167,85 @@\n          return%0A\n+        print(f%22fail: %7Bnome%7D nao esta no pula-pula%22)%0A\n         %0A       \n@@ -1411,32 +1411,36 @@\n  return%0A        \n+    \n print(f%22fail: %7Bn\n@@ -1459,24 +1459,28 @@\n a na fila%22)%0A\n+    \n         retu\n",
+            "lines": "82"
+        },
+        {
+            "label": "2025-11-14_22-43-21",
+            "content": "@@ -776,53 +776,8 @@\n f):%0A\n-        if not self.fila:%0A            return%0A\n     \n@@ -871,58 +871,8 @@\n f):%0A\n-        if not self.brincando:%0A            return%0A\n     \n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-14_22-57-53",
+            "content": "@@ -1496,17 +1496,12 @@\n ta n\n-o pula-pu\n+a fi\n la%22)\n",
+            "lines": "85"
+        },
+        {
+            "label": "2025-11-14_22-58-30",
+            "content": "class Pessoa:\n    def __init__(self, nome:str ,idade:int):\n        self.nome = nome\n        self.idade = idade\n    def getnome (self):\n        return self.nome\n    def getidade (self):\n        return self.idade\n    def __str__(self) -> str:\n\n        return f\"{self.getnome()}:{self.getidade()}\"\nclass Pula:\n    def __init__(self):\n        self.brincando: list[Pessoa] = []\n        self.fila: list[Pessoa] = []\n    \n    def __str__(self) -> str:\n            fila_str = \", \".join([str(p) for p in self.fila[::-1]])\n            \n            brincando_str = \", \".join([str(p) for p in self.brincando[::-1]])\n\n            return f\"[{fila_str}] => [{brincando_str}]\"\n\n    def FilaBrincar (self, nome: Pessoa):\n        self.fila.append(nome)\n        return\n    \n    def Proximo (self):\n        if not self.fila:\n            return\n        proximo = self.fila.pop(0)\n        self.brincando.append(proximo)\n\n    def Sair(self):\n        if not self.brincando:\n            return\n        sair = self.brincando.pop(0)\n        self.fila.append(sair)\n        return\n\n    def Remover (self, nome: str):\n        for i in range (len(self.brincando)):\n            crianca = self.brincando[i]\n            if crianca.getnome() == nome:\n                self.brincando.pop(i)\n                return\n        \n        for i in range (len(self.fila)):\n            crianca = self.fila[i]\n            if crianca.getnome() == nome:\n                self.fila.pop(i)\n                return\n        print(f\"fail: {nome} nao esta no pula-pula\")\n        return\n\n\n        \npulapula = Pula()\n    \ndef main():\n    while True:\n        line: str = input()\n        print(\"$\" + line)\n        args: list[str] = line.split(\" \")\n\n        if args[0] == \"arrive\":\n            nome = Pessoa(args[1], int(args[2]))\n            pulapula.FilaBrincar(nome)\n        \n        elif args[0] == \"show\":\n            print(pulapula)\n\n        elif args[0] == \"enter\":\n            pulapula.Proximo()\n\n        elif args[0] == \"leave\":\n            pulapula.Sair()\n        \n        elif args[0] == \"remove\":\n            nome = args[1]\n            pulapula.Remover(nome)\n        \n        elif args[0] == \"end\":\n            break\nmain()",
+            "lines": "85"
         }
     ]
 }

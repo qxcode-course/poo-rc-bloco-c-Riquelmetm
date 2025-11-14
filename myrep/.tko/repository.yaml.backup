@@ -22,11 +22,12 @@ tasks:
   poo@budega: '{rate:100, human:Ajuda_de_amigo, iagen:Ajuda_para_saber_como_funcionava_as_novas_funcoes_das_questoes,
 
     alone:10, study:700}'
+  poo@pula-pula: '{rate:70}'
 flags:
   quests: 0
   tracks: 0
   tasks: 0
-  graph: 0
+  graph: 1
   xray: 0
 lang: py
 selected: poo@pula-pula

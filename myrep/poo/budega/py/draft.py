@@ -61,6 +61,7 @@ def main():
         elif args[0] ==  "init":
             qtdcaixa = int(args[1])
             mercantil = Mercantil(qtdcaixa)
+            
         elif args[0] ==  "arrive":
             nome = args[1]
             pessoa = Pessoa(nome)
@@ -80,3 +81,4 @@ main()
         
 
 
+1

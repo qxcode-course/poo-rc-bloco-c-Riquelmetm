@@ -17,7 +17,7 @@ class Pula:
     def __str__(self) -> str:
             fila_str = ", ".join([str(p) for p in self.fila[::-1]])
             
-            brincando_str = ", ".join([str(p) for p in self.brincando])
+            brincando_str = ", ".join([str(p) for p in self.brincando[::-1]])
 
             return f"[{fila_str}] => [{brincando_str}]"
 
@@ -26,10 +26,14 @@ class Pula:
         return
     
     def Proximo (self):
+        if not self.fila:
+            return
         proximo = self.fila.pop(0)
         self.brincando.append(proximo)
 
     def Sair(self):
+        if not self.brincando:
+            return
         sair = self.brincando.pop(0)
         self.fila.append(sair)
         return
@@ -40,15 +44,14 @@ class Pula:
             if crianca.getnome() == nome:
                 self.brincando.pop(i)
                 return
-        print(f"fail: {nome} nao esta no pula-pula")
         
         for i in range (len(self.fila)):
             crianca = self.fila[i]
             if crianca.getnome() == nome:
                 self.fila.pop(i)
                 return
-            print(f"fail: {nome} nao esta na fila")
-            return
+        print(f"fail: {nome} nao esta no pula-pula")
+        return
 
 
         
