@@ -7,8 +7,98 @@
         },
         {
             "label": "2025-11-14_03-19-14",
-            "content": "class Pessoa:\n    def __init__(self, nome:str):\n        self.__nome = nome\n\n    def getnome(self) -> str:\n        return self.__nome\n    \n    def __str__(self) -> str:\n        return f\"{self.__nome}\"\n    \n\n\nclass Mercantil:\n    def __init__(self, qtdcaixa:int):\n        self.caixa: list[Pessoa | None] = [None] *  qtdcaixa\n        self.qtdcaixa = qtdcaixa\n        self.fila: list[Pessoa | None] = [None]\n        \n    def __str__(self) -> str:\n        caixas: list[str] = list(map(lambda pessoa: '----' if pessoa is None else pessoa.getnome(), self.caixa))\n        strCaixasFinal: str = \"[\" + \", \".join(caixas) + \"]\"\n        fila: list[str] = list(map(lambda fila: '----' if fila is None else fila.getnome(), self.fila))\n        strFilaFinal: str = \"[\" +\", \".join(fila) + \"]\"\n        return f\"Caixa: {strCaixasFinal}\\nEspera: {strFilaFinal}\"\n    \n    def chegar (self, nome: Pessoa):\n        self.fila.append(nome)\n\n    def chamar(self):\n        if not self.fila:\n            print(\"fail: sem clientes\")\n        elif self.caixa[0]:\n            print(\"fail: caixa ocupado\")\n        else:\n            self.caixa.append(self.fila[0])\n            self.fila.pop(0)\n        \n\n\n    # def adicionar (self, nome: Pessoa | None, posicao: int ):\n    #     if self.caixa[posicao] is None:\n    #         self.caixa[posicao] = nome\n    #     else:\n    #        print(\"ja tem gente\")\n    #     return \n        ",
+            "content": "@@ -1156,24 +1156,36 @@\n (0)%0A\n+        %0A%0A\n %0A   \n+ #\n  def \n-finaliz\n+adicion\n ar (\n@@ -1195,261 +1195,99 @@\n f, n\n-umber: int):%0A        if number %3C= len(self.caixa):%0A            if not self.caixa%5Bnumber%5D:%0A                print(%22fail: caixa vazio%22)%0A            else:%0A                pessoa = self.caixa%5Bnumber%5D%0A                self.caixa%5Bnumber%5D =\n+ome: Pessoa %7C None, posicao: int ):%0A    #     if self.caixa%5Bposicao%5D is\n  None\n+:\n %0A    \n-    \n+#\n         \n retu\n@@ -1286,641 +1286,104 @@\n     \n-return pessoa%0A        else:%0A            print(%22fail: caixa inexistente%22)%0A%0Adef main():%0A    mercantil = None%0A%0A    while True:%0A        line: str = input()%0A        print(%22$%22 + line)%0A        args: list%5Bstr%5D = line.split(%22 %22)%0A%0A        if args%5B0%5D == %22show%22:%0A            print(mercantil)%0A\n+ self.caixa%5Bposicao%5D = nome\n %0A    \n+#\n     \n+ \n el\n-if args%5B0%5D ==  %22init%22:%0A            qtdcaixa = int(args%5B1%5D)%0A            mercantil = Mercantil(qtdcaixa)%0A        elif args%5B0%5D ==  %22enter%22:%0A            nome = args%5B1%5D%0A            mercantil.chegar(nome)%0A\n+se:%0A    #        print(%22ja tem gente%22)\n %0A    \n+#\n     \n-elif args%5B0%5D ==  %22call%22:%0A            mercantil.chamar()%0A        %0A        elif args%5B0%5D ==  %22finish%22:%0A            mercantil.finalizar()%0A\n+ return \n %0A   \n@@ -1379,19 +1379,16 @@\n return %0A        \n-%0A%0A%0A\n",
             "lines": "46"
+        },
+        {
+            "label": "2025-11-14_03-58-01",
+            "content": "@@ -2070,15 +2070,8 @@\n ()%0A%0A\n-main()%0A\n     \n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-11-14_03-58-26",
+            "content": "@@ -489,25 +489,24 @@\n essoa: '----\n--\n ' if pessoa \n@@ -662,17 +662,16 @@\n a: '----\n--\n ' if fil\n@@ -790,17 +790,16 @@\n  f%22Caixa\n-s\n : %7BstrCa\n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-14_03-59-45",
+            "content": "@@ -659,16 +659,21 @@\n  fila: '\n+-----\n ' if fil\n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-14_04-00-42",
+            "content": "@@ -2066,57 +2066,8 @@\n ar()\n-%0A        elif args%5B0%5D == %22end%22:%0A            break\n %0A%0Ama\n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-14_04-01-16",
+            "content": "@@ -908,33 +908,8 @@\n ome)\n-%0A        return self.fila\n %0A%0A  \n",
+            "lines": "78"
+        },
+        {
+            "label": "2025-11-14_04-05-43",
+            "content": "@@ -919,16 +919,26 @@\n   return\n+ self.fila\n %0A%0A    de\n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-14_04-05-51",
+            "content": "@@ -815,17 +815,16 @@\n nEspera:\n-r\n  %7BstrFil\n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-14_04-07-21",
+            "content": "@@ -815,16 +815,17 @@\n nEspera:\n+r\n  %7BstrFil\n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-14_04-08-03",
+            "content": "@@ -662,10 +662,10 @@\n la: \n-%22%22\n+''\n  if \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-14_04-11-33",
+            "content": "@@ -1869,14 +1869,13 @@\n =  %22\n-arrive\n+enter\n %22:%0A \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-14_04-14-35",
+            "content": "@@ -391,16 +391,20 @@\n one%5D = %5B\n+None\n %5D%0A      \n@@ -1905,42 +1905,8 @@\n %5B1%5D%0A\n-            pessoa = Pessoa(nome)%0A\n     \n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-14_04-17-05",
+            "content": "@@ -1552,25 +1552,8 @@\n one%0A\n-    pessoa = None\n %0A   \n@@ -1960,22 +1960,20 @@\n .chegar(\n-pessoa\n+nome\n )%0A%0A     \n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-11-14_04-20-21",
+            "content": "@@ -1413,20 +1413,23 @@\n aixa\n-.pop(\n+%5B\n number\n-)\n+%5D = None\n %0A   \n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-11-14_04-22-09",
+            "content": "@@ -932,37 +932,24 @@\n  chamar(self\n-, number: int\n ):%0A        i\n@@ -1115,29 +1115,27 @@\n ixa.\n-insert(number, number\n+append(self.fila%5B0%5D\n )%0A  \n@@ -2020,37 +2020,8 @@\n l%22:%0A\n-            number = args%5B1%5D%0A\n     \n@@ -2045,22 +2045,16 @@\n .chamar(\n-number\n )%0A      \n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-11-14_04-28-42",
+            "content": "@@ -936,16 +936,29 @@\n mar(self\n+, number: int\n ):%0A     \n@@ -1135,20 +1135,22 @@\n ert(\n-self.fila%5B0%5D\n+number, number\n )%0A  \n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-14_04-31-33",
+            "content": "@@ -2016,16 +2016,45 @@\n %22call%22:%0A\n+            number = args%5B1%5D%0A\n         \n@@ -2074,16 +2074,22 @@\n .chamar(\n+number\n )%0A      \n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-14_04-31-42",
+            "content": "@@ -1111,22 +1111,22 @@\n f.caixa.\n-append\n+insert\n (self.fi\n@@ -1413,23 +1413,20 @@\n aixa\n-%5B\n+.pop(\n number\n-%5D = None\n+)\n %0A   \n",
+            "lines": "80"
+        },
+        {
+            "label": "2025-11-14_04-31-51",
+            "content": "class Pessoa:\n    def __init__(self, nome:str):\n        self.__nome = nome\n\n    def getnome(self) -> str:\n        return self.__nome\n    \n    def __str__(self) -> str:\n        return f\"{self.__nome}\"\n    \n\n\nclass Mercantil:\n    def __init__(self, qtdcaixa:int):\n        self.caixa: list[Pessoa | None] = [None] *  qtdcaixa\n        self.qtdcaixa = qtdcaixa\n        self.fila: list[Pessoa | None] = []\n        \n    def __str__(self) -> str:\n        caixas: list[str] = list(map(lambda pessoa: '-----' if pessoa is None else pessoa.getnome(), self.caixa))\n        strCaixasFinal: str = \"[\" + \", \".join(caixas) + \"]\"\n        fila: list[str] = list(map(lambda fila: \"\" if fila is None else fila.getnome(), self.fila))\n        strFilaFinal: str = \"[\" +\", \".join(fila) + \"]\"\n        return f\"Caixas: {strCaixasFinal}\\nEspera: {strFilaFinal}\"\n    \n    def chegar (self, nome: Pessoa):\n        self.fila.append(nome)\n        return\n\n    def chamar(self):\n        if not self.fila:\n            print(\"fail: sem clientes\")\n        elif self.caixa[0]:\n            print(\"fail: caixa ocupado\")\n        else:\n            self.caixa.append(self.fila[0])\n            self.fila.pop(0)\n\n    def finalizar (self, number: int):\n        if number <= len(self.caixa):\n            if not self.caixa[number]:\n                print(\"fail: caixa vazio\")\n            else:\n                pessoa = self.caixa[number]\n                self.caixa[number] = None\n                return pessoa\n        else:\n            print(\"fail: caixa inexistente\")\n\ndef main():\n    mercantil = None\n    pessoa = None\n    while True:\n        line: str = input()\n        print(\"$\" + line)\n        args: list[str] = line.split(\" \")\n\n        if args[0] == \"show\":\n            print(mercantil)\n\n        elif args[0] ==  \"init\":\n            qtdcaixa = int(args[1])\n            mercantil = Mercantil(qtdcaixa)\n        elif args[0] ==  \"arrive\":\n            nome = args[1]\n            pessoa = Pessoa(nome)\n            mercantil.chegar(pessoa)\n\n        elif args[0] ==  \"call\":\n            mercantil.chamar()\n        \n        elif args[0] ==  \"finish\":\n            mercantil.finalizar()\n        elif args[0] == \"end\":\n            break\n\nmain()\n        \n\n\n",
+            "lines": "80"
         }
     ]
 }

@@ -14,17 +14,18 @@ class Mercantil:
     def __init__(self, qtdcaixa:int):
         self.caixa: list[Pessoa | None] = [None] *  qtdcaixa
         self.qtdcaixa = qtdcaixa
-        self.fila: list[Pessoa | None] = [None]
+        self.fila: list[Pessoa | None] = []
         
     def __str__(self) -> str:
-        caixas: list[str] = list(map(lambda pessoa: '----' if pessoa is None else pessoa.getnome(), self.caixa))
+        caixas: list[str] = list(map(lambda pessoa: '-----' if pessoa is None else pessoa.getnome(), self.caixa))
         strCaixasFinal: str = "[" + ", ".join(caixas) + "]"
-        fila: list[str] = list(map(lambda fila: '----' if fila is None else fila.getnome(), self.fila))
+        fila: list[str] = list(map(lambda fila: "" if fila is None else fila.getnome(), self.fila))
         strFilaFinal: str = "[" +", ".join(fila) + "]"
-        return f"Caixa: {strCaixasFinal}\nEspera: {strFilaFinal}"
+        return f"Caixas: {strCaixasFinal}\nEspera: {strFilaFinal}"
     
     def chegar (self, nome: Pessoa):
         self.fila.append(nome)
+        return
 
     def chamar(self):
         if not self.fila:
@@ -48,7 +49,7 @@ class Mercantil:
 
 def main():
     mercantil = None
-
+    pessoa = None
     while True:
         line: str = input()
         print("$" + line)
@@ -60,16 +61,20 @@ def main():
         elif args[0] ==  "init":
             qtdcaixa = int(args[1])
             mercantil = Mercantil(qtdcaixa)
-        elif args[0] ==  "enter":
+        elif args[0] ==  "arrive":
             nome = args[1]
-            mercantil.chegar(nome)
+            pessoa = Pessoa(nome)
+            mercantil.chegar(pessoa)
 
         elif args[0] ==  "call":
             mercantil.chamar()
         
         elif args[0] ==  "finish":
             mercantil.finalizar()
+        elif args[0] == "end":
+            break
 
+main()
         
 
 
