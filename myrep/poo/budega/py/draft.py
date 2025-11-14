@@ -19,31 +19,31 @@ class Mercantil:
     def __str__(self) -> str:
         caixas: list[str] = list(map(lambda pessoa: '-----' if pessoa is None else pessoa.getnome(), self.caixa))
         strCaixasFinal: str = "[" + ", ".join(caixas) + "]"
-        fila: list[str] = list(map(lambda fila: "" if fila is None else fila.getnome(), self.fila))
+        fila: list[str] = list(map(lambda p: "" if p is None else p.getnome(), self.fila))
         strFilaFinal: str = "[" +", ".join(fila) + "]"
         return f"Caixas: {strCaixasFinal}\nEspera: {strFilaFinal}"
     
-    def chegar (self, nome: Pessoa):
+    def chegar (self, nome: Pessoa | None) -> None:
         self.fila.append(nome)
         return
 
-    def chamar(self):
+    def chamar(self, number: int):
         if not self.fila:
             print("fail: sem clientes")
-        elif self.caixa[0]:
-            print("fail: caixa ocupado")
+            return
+        
+        if self.caixa[number] is None:
+            self.caixa[number] = self.fila.pop(0)
+
         else:
-            self.caixa.append(self.fila[0])
-            self.fila.pop(0)
+            print("fail: caixa ocupado")
 
     def finalizar (self, number: int):
-        if number <= len(self.caixa):
+        if 0 <= number < len(self.caixa):
             if not self.caixa[number]:
                 print("fail: caixa vazio")
             else:
-                pessoa = self.caixa[number]
                 self.caixa[number] = None
-                return pessoa
         else:
             print("fail: caixa inexistente")
 
@@ -67,10 +67,12 @@ def main():
             mercantil.chegar(pessoa)
 
         elif args[0] ==  "call":
-            mercantil.chamar()
+            number = int(args[1])
+            mercantil.chamar(number)
         
         elif args[0] ==  "finish":
-            mercantil.finalizar()
+            number = int(args[1])
+            mercantil.finalizar(number)
         elif args[0] == "end":
             break
 

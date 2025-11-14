@@ -24,3 +24,38 @@
 2025-11-14 04:31:42, EXEC, v:1, k:poo@budega, mode:FULL, rate:20, size:80
 2025-11-14 04:31:51, EXEC, v:1, k:poo@budega, mode:FULL, rate:20, size:80
 2025-11-14 04:33:30, MOVE, v:1, k:poo@budega, mode:BACK
+2025-11-14 12:40:14, MOVE, v:1, k:poo@budega, mode:PICK
+2025-11-14 12:40:15, EXEC, v:1, k:poo@budega, mode:FULL, rate:20
+2025-11-14 12:42:14, MOVE, v:1, k:poo@budega, mode:BACK
+2025-11-14 12:53:25, MOVE, v:1, k:poo@budega, mode:PICK
+2025-11-14 12:53:26, EXEC, v:1, k:poo@budega, mode:FULL, rate:30, size:81
+2025-11-14 12:58:21, EXEC, v:1, k:poo@budega, mode:FULL, rate:60, size:82
+2025-11-14 13:09:07, EXEC, v:1, k:poo@budega, mode:FULL, rate:60, size:81
+2025-11-14 13:18:40, MOVE, v:1, k:poo@budega, mode:PICK
+2025-11-14 13:18:41, EXEC, v:1, k:poo@budega, mode:FULL, rate:50, size:82
+2025-11-14 13:23:15, EXEC, v:1, k:poo@budega, mode:FULL, rate:50, size:82
+2025-11-14 13:30:49, EXEC, v:1, k:poo@budega, mode:FULL, rate:50, size:83
+2025-11-14 13:34:59, EXEC, v:1, k:poo@budega, mode:FULL, rate:50, size:83
+2025-11-14 13:35:29, EXEC, v:1, k:poo@budega, mode:FULL, rate:50, size:82
+2025-11-14 13:38:08, EXEC, v:1, k:poo@budega, mode:FULL, rate:20, size:83
+2025-11-14 13:39:41, EXEC, v:1, k:poo@budega, mode:FULL, rate:50, size:83
+2025-11-14 13:44:50, EXEC, v:1, k:poo@budega, mode:FULL, rate:60, size:83
+2025-11-14 13:46:15, EXEC, v:1, k:poo@budega, mode:FULL, rate:30, size:83
+2025-11-14 13:46:24, EXEC, v:1, k:poo@budega, mode:FULL, rate:60, size:83
+2025-11-14 13:48:00, EXEC, v:1, k:poo@budega, mode:FULL, rate:50, size:84
+2025-11-14 13:48:10, EXEC, v:1, k:poo@budega, mode:FULL, rate:60, size:83
+2025-11-14 13:50:51, EXEC, v:1, k:poo@budega, mode:FULL, rate:50, size:83
+2025-11-14 13:51:37, EXEC, v:1, k:poo@budega, mode:FULL, rate:60, size:83
+2025-11-14 13:54:24, EXEC, v:1, k:poo@budega, mode:FULL, rate:60, size:83
+2025-11-14 13:57:04, EXEC, v:1, k:poo@budega, mode:FULL, rate:60, size:86
+2025-11-14 14:02:03, EXEC, v:1, k:poo@budega, mode:FULL, rate:50, size:91
+2025-11-14 14:02:11, EXEC, v:1, k:poo@budega, mode:FULL, rate:60, size:87
+2025-11-14 14:09:02, EXEC, v:1, k:poo@budega, mode:FULL, rate:70, size:86
+2025-11-14 14:09:33, EXEC, v:1, k:poo@budega, mode:FULL, rate:70, size:85
+2025-11-14 14:10:24, EXEC, v:1, k:poo@budega, mode:FULL, rate:100, size:87
+2025-11-14 14:12:37, EXEC, v:1, k:poo@budega, mode:FULL, rate:100, size:85
+2025-11-14 14:12:43, EXEC, v:1, k:poo@budega, mode:FULL, rate:100, size:82
+2025-11-14 14:13:26, MOVE, v:1, k:poo@budega, mode:BACK
+2025-11-14 14:16:02, SELF, v:1, k:poo@budega, rate:100, human:Ajuda_de_amigo, iagen:Ajuda_para_saber_como_funcionava_as_novas_funcoes_das_questoes, alone:10, study:700
+2025-11-14 14:17:24, MOVE, v:1, k:poo@lapiseira, mode:PICK
+2025-11-14 14:35:11, MOVE, v:1, k:poo@lapiseira, mode:BACK
