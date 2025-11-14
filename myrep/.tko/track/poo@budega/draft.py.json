@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-13_23-06-03",
+            "content": "class Pessoa:\n    def __init__(self, nome:str):\n        self.__nome = nome\n\n    def getnome(self) -> str:\n        return self.__nome\n    \n    def __str__(self) -> str:\n        return f\"{self.__nome}\"\n    \n\nclass Mercantil:\n    def __init__(self, qtdcaixa:int):\n        self.caixa = qtdcaixa\n        self.qtdcaixa = [None] * qtdcaixa\n        self.fila = [None]\n        \n        ",
+            "lines": "18"
+        }
+    ]
+}
