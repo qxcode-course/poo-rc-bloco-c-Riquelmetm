@@ -36,11 +36,13 @@ class Mercantil:
             self.fila.pop(0)
 
     def finalizar (self, number: int):
-        if number == len(self.caixa):
-            if not self.caixa:
+        if number <= len(self.caixa):
+            if not self.caixa[number]:
                 print("fail: caixa vazio")
             else:
-                self.caixa.pop(number)
+                pessoa = self.caixa[number]
+                self.caixa[number] = None
+                return pessoa
         else:
             print("fail: caixa inexistente")
 
@@ -48,10 +50,5 @@ class Mercantil:
 
 
 
-    # def adicionar (self, nome: Pessoa | None, posicao: int ):
-    #     if self.caixa[posicao] is None:
-    #         self.caixa[posicao] = nome
-    #     else:
-    #        print("ja tem gente")
-    #     return 
+
         
