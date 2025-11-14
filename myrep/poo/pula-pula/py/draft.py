@@ -8,7 +8,7 @@ class Pessoa:
         return self.idade
     def __str__(self) -> str:
 
-        return f"[{self.getnome()}:{self.getidade()}]"
+        return f"{self.getnome()}:{self.getidade()}"
 class Pula:
     def __init__(self):
         self.brincando: list[Pessoa] = []
@@ -65,7 +65,7 @@ def main():
             pulapula.FilaBrincar(nome)
         
         elif args[0] == "show":
-            print(Pula)
+            print(pulapula)
 
         elif args[0] == "enter":
             pulapula.Proximo()
@@ -79,3 +79,4 @@ def main():
         
         elif args[0] == "end":
             break
+main()
