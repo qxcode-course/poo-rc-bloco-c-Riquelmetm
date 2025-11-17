@@ -24,9 +24,34 @@ class Lapiseira:
         self.grossura = grossura
         self.ponta = None
         self.tambor: list[Grafite | None] = [None] * tambor
+ 
+    def inserir(self, grafite: Grafite):
+        vaga_tambor = self.tambor.index(None)
+        if self.grossura == grafite.grossura:
+            self.tambor.pop(vaga_tambor)
+            self.tambor.insert(vaga_tambor,grafite)
+        else:
+            print("fail: calibre incompatível")
 
 
-    def inserir(self):
+    def puxar(self):
+        contar_None =  0
+        for  i in range(len(self.tambor)):
+            if self.tambor[i] == None:
+                contar_None += 1
         
 
+
+        if self.ponta is not None:
+            print("fail: ja existe grafite no bico:")
+        elif contar_None == len(self.tambor):
+            print("fail: tambor vazio")
+        else:
+            self.ponta = self.tambor[0]
+            self.tambor.pop(0)
+    
+    def remover(self):
+        if self.ponta is None:
+            print("Fail: Grafite ja removido")
+        self.ponta = None
 
