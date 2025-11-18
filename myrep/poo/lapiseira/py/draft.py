@@ -23,9 +23,9 @@ class Lapiseira:
     def __init__(self, grossura: float):
         self.grossura = grossura
         self.ponta = None
-        self.tambor: list[Grafite | None] = [None]
+        self.tambor: list[Grafite] = []
     def __str__(self) -> str:
-        return f""
+        return f"calibre: {self.grossura}, bico: [{self.ponta}], tambor: <{self.tambor}>"
  
     def inserir(self, grafite: Grafite):
         vaga_tambor = self.tambor.index(None)
@@ -100,16 +100,21 @@ def main():
             print(lapiseira)
 
         elif args[0] == "insert":
- 
+            gross = float(args[1])
+            dure = str(args[2])
+            tama = int(args[3])
+            grafite = Grafite(gross, dure, tama)
+            lapiseira.inserir(grafite)
             
         elif args[0] == "pull":
+            lapiseira.puxar()
 
 
         elif args[0] == "remove":
-
+            lapiseira.remover()
 
         elif args[0] == "write":
-
+            lapiseira.Escrever()
             
         else:
             print("fail: comando invalido")
