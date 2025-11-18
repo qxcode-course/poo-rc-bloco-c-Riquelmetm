@@ -21,6 +21,7 @@ expanded:
 tasks:
   poo@budega: '{rate:100, human:Ajuda_de_amigo, iagen:Ajuda_para_saber_como_funcionava_as_novas_funcoes_das_questoes,
     alone:10, study:700}'
+  poo@lapiseira: '{rate:100, iagen:usada_para_entender_a_questao, alone:10, study:360}'
   poo@pula-pula: '{rate:100, iagen:Ajuda_para_descobrir_erros_de_sintaxe, alone:10,
     study:360}'
 flags:

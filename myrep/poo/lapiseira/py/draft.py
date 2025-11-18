@@ -16,6 +16,7 @@ class Grafite:
         return 0 
     
     def __str__(self) -> str:
+            
         return f"[{self.grossura}:{self.dureza}:{self.tamanho}]"
 
 
@@ -25,16 +26,19 @@ class Lapiseira:
         self.ponta = None
         self.tambor: list[Grafite] = []
     def __str__(self) -> str:
-        return f"calibre: {self.grossura}, bico: [{self.ponta}], tambor: <{self.tambor}>"
+        bico = "[]"
+        if self.ponta is not None:
+            bico = str(self.ponta)
+        tambor_str = "".join([str(g) for g in self.tambor])
+        return f"calibre: {self.grossura}, bico: {bico}, tambor: <{tambor_str}>"
  
     def inserir(self, grafite: Grafite):
-        vaga_tambor = self.tambor.index(None)
         if self.grossura == grafite.grossura:
-            self.tambor.pop(vaga_tambor)
-            self.tambor.insert(vaga_tambor,grafite)
+            self.tambor.append(grafite)
             return
         else:
             print("fail: calibre incompatível")
+            return
 
 
     def puxar(self):
@@ -44,14 +48,14 @@ class Lapiseira:
                 contar_None += 1
         
         if self.ponta is not None:
-            print("fail: ja existe grafite no bico:")
+            print("fail: ja existe grafite no bico")
             return
         elif contar_None == len(self.tambor):
             print("fail: tambor vazio")
             return
         else:
             self.ponta = self.tambor[0]
-            self.tambor.pop(0) # (Barra invertida removida)
+            self.tambor.pop(0)
             return
     
     def remover(self):
@@ -63,7 +67,7 @@ class Lapiseira:
 
     def Escrever(self):
         if self.ponta is None:
-            print("Fail: Nao tem grafite no bico")
+            print("fail: nao existe grafite no bico")
             return
         
         elif self.ponta.tamanho <= 10:
