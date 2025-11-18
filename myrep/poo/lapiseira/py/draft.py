@@ -42,16 +42,9 @@ class Lapiseira:
 
 
     def puxar(self):
-        contar_None =  0
-        for  i in range(len(self.tambor)):
-            if self.tambor[i] == None:
-                contar_None += 1
         
         if self.ponta is not None:
             print("fail: ja existe grafite no bico")
-            return
-        elif contar_None == len(self.tambor):
-            print("fail: tambor vazio")
             return
         else:
             self.ponta = self.tambor[0]
