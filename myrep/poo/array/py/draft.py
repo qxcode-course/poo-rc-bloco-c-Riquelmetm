@@ -5,9 +5,8 @@ class lista:
     def remover(self, valor):
         if not self.lista:
             print("Lista vazia")
-            return
         else:
-            if valor 
+            self.lista.pop(valor)
                 
     def adicionar (self, valor):
         
@@ -17,15 +16,17 @@ class lista:
         else:
             posicao = int(input("Digite a posicao do valor"))
             self.lista.insert(posicao, valor)
-    
-    def remover (self, valor):
-        self.lista.pop(valor)
         
-    def buscar (self, valor):
-        for i in self.lista:
-            if valor == self.lista[i]:
-                self.lista.index[i]
-                print(self.lista[i])
+        
+    def buscar(self, valor):
+        encontrou = False
+        for i, item in enumerate(self.lista):
+            if valor == item:
+                print(f"Valor {valor} encontrado no índice {i}")
+                encontrou = True
+        
+        if not encontrou:
+            print("Valor não encontrado")
     
     
     
