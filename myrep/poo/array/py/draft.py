@@ -2,12 +2,12 @@ class lista:
     def __init__(self):
         self.lista = []
 
-    def remover(self, args[1]):
+    def remover(self, valor):
         if not self.lista:
             print("Lista vazia")
             return
         else:
-            if args[1]
+            if valor 
                 
     def adicionar (self, valor):
         
@@ -18,8 +18,15 @@ class lista:
             posicao = int(input("Digite a posicao do valor"))
             self.lista.insert(posicao, valor)
     
-    def remover (self):
+    def remover (self, valor):
+        self.lista.pop(valor)
         
+    def buscar (self, valor):
+        for i in self.lista:
+            if valor == self.lista[i]:
+                self.lista.index[i]
+                print(self.lista[i])
+    
     
     
     
