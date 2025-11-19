@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-18_23-27-20",
+            "content": "@@ -1,96 +1,68 @@\n-class lista:%0A    def __init__(self):%0A        self.lista\n+lista = %5B%5D%0Awhile True:%0A    args\n  = %5B%5D%0A\n-%0A\n     \n-def remover(self, args%5B1%5D)\n+if args%5B0%5D == %22remover%22\n :%0A  \n@@ -74,21 +74,16 @@\n  if not \n-self.\n lista:%0A \n@@ -122,171 +122,4 @@\n     \n-        return%0A        else:%0A            if args%5B1%5D%0A                %0A    def adicionar (self):%0A        self.lista.append()%0A    %0A    %0A    %0A    %0A    %0A    %0A%0A        %0A    \n",
+            "lines": "7"
+        },
+        {
+            "label": "2025-11-18_23-52-53",
+            "content": "class lista:\n    def __init__(self):\n        self.lista = []\n\n    def remover(self, args[1]):\n        if not self.lista:\n            print(\"Lista vazia\")\n            return\n        else:\n            if args[1]\n                \n    def adicionar (self):\n        self.lista.append()\n    \n    \n    \n    \n    \n    \n\n        \n    ",
+            "lines": "22"
+        }
+    ]
+}
