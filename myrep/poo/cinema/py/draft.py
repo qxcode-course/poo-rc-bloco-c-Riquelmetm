@@ -31,17 +31,45 @@ class Sala:
         
     def cancel (self, id):
         for i in range(len(self.cadeiras)):
-            if self.cadeiras[i] == id:
-                self.cadeiras[i] = None
+            if self.cadeiras[i] is not None and self.cadeiras[i].id == id:
+                self.cadeiras[i] = None 
                 return
         print("fail: cliente nao esta no cinema")
     
-    
     def __str__(self) -> str:
         traco = []
-        for i in range(len(self.cadeiras)):
-            if self.cadeiras[i] == None:
-                traco[i] = "i"
+        for cadeira in self.cadeiras:
+            if cadeira is None:
+                traco.append("-")
             else:
-                traco[i] = self.cadeiras[i]
+                traco.append(str(cadeira))
         return f"[{' '.join(traco)}]"
+    
+
+def main ():
+    sala = None
+    while True:
+        line:str =input()
+        print("$" + line)
+        args:list[str] = line.split(" ")
+        
+        if args [0] == "end":
+            break
+        elif args[0] == "init":
+            valor = int(args[1])
+            sala = Sala(valor)
+        elif args[0] == "show":
+            if sala == None:
+                print("[]")
+                continue
+            print(sala)
+            
+        elif args[0] == "reserve":
+            id = args[1]
+            fone = int(args[2])
+            indice = int(args[3])
+            sala.reserve(id, fone, indice)
+        elif args[0] == "cancel":
+            id = args[1]
+            sala.cancel(id)
+main()

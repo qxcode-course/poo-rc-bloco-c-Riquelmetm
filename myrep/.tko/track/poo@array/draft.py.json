@@ -7,8 +7,18 @@
         },
         {
             "label": "2025-11-18_23-52-53",
-            "content": "class lista:\n    def __init__(self):\n        self.lista = []\n\n    def remover(self, args[1]):\n        if not self.lista:\n            print(\"Lista vazia\")\n            return\n        else:\n            if args[1]\n                \n    def adicionar (self):\n        self.lista.append()\n    \n    \n    \n    \n    \n    \n\n        \n    ",
+            "content": "@@ -69,37 +69,39 @@\n f remover(self, \n-valor\n+args%5B1%5D\n ):%0A        if no\n@@ -159,96 +159,31 @@\n     \n-else:%0A            self.lista.pop(valor)%0A                %0A    def adicionar (self, valor)\n+    return%0A        else\n :%0A  \n@@ -192,626 +192,93 @@\n     \n-%0A    \n     \n-a = int(input(%22Digite 1 para inserir normalmente, Digite 2 para inserir em uma posicao especifica: %22))%0A        if a == 1:%0A            self.lista.append(valor)%0A        else:%0A            posicao = int(input(%22Digite a posicao do valor%22))%0A            self.lista.insert(posicao, valor)%0A        %0A        %0A    def buscar(self, valor):%0A        encontrou = False%0A        for i, item in enumerate(self.lista):%0A            if valor == item:%0A                print(f%22Valor %7Bvalor%7D encontrado no %C3%ADndice %7Bi%7D%22)%0A                encontrou = True%0A        %0A        if not encontrou:%0A            print(%22Valor n%C3%A3o encontrado%22)%0A    \n+if args%5B1%5D%0A                %0A    def adicionar (self):%0A        self.lista.append()\n %0A   \n",
             "lines": "22"
+        },
+        {
+            "label": "2025-11-19_05-07-00",
+            "content": "@@ -869,199 +869,8 @@\n o%22)%0A\n-def main()%0A    while True:%0A        line:str =input()%0A        print(%22$%22 + line)%0A        args:list%5Bstr%5D = line.split(%22 %22)%0A        if args%5B0%5D == %22adicionar%22:%0A            valor = args%5B1%5D%0A        \n     \n",
+            "lines": "39"
+        },
+        {
+            "label": "2025-11-19_22-11-01",
+            "content": "class lista:\n    def __init__(self):\n        self.lista = []\n\n    def remover(self, valor):\n        if not self.lista:\n            print(\"Lista vazia\")\n        else:\n            self.lista.pop(valor)\n                \n    def adicionar (self, valor):\n        \n        a = int(input(\"Digite 1 para inserir normalmente, Digite 2 para inserir em uma posicao especifica: \"))\n        if a == 1:\n            self.lista.append(valor)\n        else:\n            posicao = int(input(\"Digite a posicao do valor\"))\n            self.lista.insert(posicao, valor)\n        \n        \n    def buscar(self, valor):\n        encontrou = False\n        for i, item in enumerate(self.lista):\n            if valor == item:\n                print(f\"Valor {valor} encontrado no \u00edndice {i}\")\n                encontrou = True\n        \n        if not encontrou:\n            print(\"Valor n\u00e3o encontrado\")\ndef main()\n    while True:\n        line:str =input()\n        print(\"$\" + line)\n        args:list[str] = line.split(\" \")\n        if args[0] == \"adicionar\":\n            valor = args[1]\n            \n    \n    \n    \n    \n    \n    \n\n        \n    ",
+            "lines": "46"
         }
     ]
 }

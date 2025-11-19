@@ -27,7 +27,43 @@ class lista:
         
         if not encontrou:
             print("Valor não encontrado")
-    
+def main()
+    minha_lista = lista()
+
+    while True:
+            line = input()
+            print("$" + line)
+            args = line.split(" ")
+            
+            if args[0] == "end":
+                break
+            
+            elif args[0] == "adicionar":
+                if len(args) > 1:
+                    valor = int(args[1])
+                    minha_lista.adicionar(valor)
+                else:
+                    print("Erro: digite 'adicionar <valor>'")
+
+            elif args[0] == "remover":
+                if len(args) > 1:
+                    valor = int(args[1])
+                    minha_lista.remover(valor)
+                else:
+                    print("Erro: digite 'remover <valor>'")
+
+            elif args[0] == "buscar":
+                if len(args) > 1:
+                    valor = int(args[1])
+                    minha_lista.buscar(valor)
+                else:
+                    print("Erro: digite 'buscar <valor>'")
+            
+            elif args[0] == "show":
+                print(minha_lista)
+
+            else:
+                print("Comando inválido")
     
     
     

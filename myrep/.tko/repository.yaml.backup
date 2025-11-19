@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: /workspaces/poo-rc-bloco-c-Riquelmetm/myrep/.tko/cache/poo/Readme.md
-  cache_timestamp: '2025-11-19 04:14:21'
+  cache_timestamp: '2025-11-19 21:51:44'
   filters:
   - listas
 expanded:
@@ -20,12 +20,11 @@ expanded:
 - poo@bloco_c-listas
 tasks:
   poo@budega: '{rate:100, human:Ajuda_de_amigo, iagen:Ajuda_para_saber_como_funcionava_as_novas_funcoes_das_questoes,
-
     alone:10, study:700}'
   poo@lapiseira: '{rate:100, iagen:usada_para_entender_a_questao, alone:10, study:360}'
   poo@pula-pula: '{rate:100, iagen:Ajuda_para_descobrir_erros_de_sintaxe, alone:10,
-
     study:360}'
+  poo@cinema: '{rate:100, alone:10, study:60}'
 flags:
   quests: 0
   tracks: 0
@@ -33,4 +32,4 @@ flags:
   graph: 1
   xray: 0
 lang: py
-selected: poo@cinema
+selected: poo@array
