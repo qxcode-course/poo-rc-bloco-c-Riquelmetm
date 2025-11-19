@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-19_02-44-40",
+            "content": "@@ -36,17 +36,16 @@\n f, nome:\n- \n str, fon\n@@ -46,17 +46,16 @@\n r, fone:\n- \n int):%0A  \n@@ -100,16 +100,25 @@\n  = fone%0A\n+    %0A    \n %0A    def\n@@ -131,16 +131,23 @@\n __(self)\n+ -%3E str\n :%0A      \n@@ -181,17 +181,16 @@\n fone%7D%22%0A%0A\n-%0A\n class Sa\n@@ -222,17 +222,16 @@\n , valor:\n- \n int):%0A  \n@@ -270,528 +270,4 @@\n alor\n-%0A%0A    def reserve(self, id: str, fone: int, indice: int):%0A%0A%0A        if indice %3C 0 or indice %3E= len(self.cadeiras):%0A            print(%22fail: cadeira nao existe%22)%0A            return%0A%0A        if self.cadeiras%5Bindice%5D is not None:%0A            print(%22fail: cadeira ja esta ocupada%22)%0A            return%0A%0A        for cliente in self.cadeiras:%0A            if cliente is not None and cliente.id == id:%0A                print(%22fail: cliente ja esta no cinema%22)%0A                return%0A%0A        self.cadeiras%5Bindice%5D = Cliente(id, fone)%0A\n",
+            "lines": "12"
+        },
+        {
+            "label": "2025-11-19_04-14-27",
+            "content": "@@ -782,509 +782,4 @@\n ne)%0A\n-        %0A    def cancel (self, id):%0A        for i in range(len(self.cadeiras)):%0A            if self.cadeiras%5Bi%5D == id:%0A                self.cadeiras%5Bi%5D = None%0A                return%0A        print(%22fail: cliente nao esta no cinema%22)%0A    %0A    %0A    def __str__(self) -%3E str:%0A        traco = %5B%5D%0A        for i in range(len(self.cadeiras))%0A            if self.cadeiras%5Bi%5D == None:%0A                traco%5Bi%5D = %22i%22%0A            else:%0A                traco%5Bi%5D = self.cadeiras%5Bi%5D%0A        return f%22%5B%7B' '.join(traco)%7D%5D%22\n",
+            "lines": "30"
+        },
+        {
+            "label": "2025-11-19_04-23-07",
+            "content": "@@ -1103,33 +1103,32 @@\n (self.cadeiras))\n-:\n %0A            if \n",
+            "lines": "47"
+        },
+        {
+            "label": "2025-11-19_04-23-21",
+            "content": "class Cliente:\n    def __init__(self, nome: str, fone: int):\n        self.id = nome\n        self.fone = fone\n\n    def __str__(self):\n        return f\"{self.id}:{self.fone}\"\n\n\nclass Sala:\n    def __init__(self, valor: int):\n        self.cadeiras = [None] * valor\n\n    def reserve(self, id: str, fone: int, indice: int):\n\n\n        if indice < 0 or indice >= len(self.cadeiras):\n            print(\"fail: cadeira nao existe\")\n            return\n\n        if self.cadeiras[indice] is not None:\n            print(\"fail: cadeira ja esta ocupada\")\n            return\n\n        for cliente in self.cadeiras:\n            if cliente is not None and cliente.id == id:\n                print(\"fail: cliente ja esta no cinema\")\n                return\n\n        self.cadeiras[indice] = Cliente(id, fone)\n        \n    def cancel (self, id):\n        for i in range(len(self.cadeiras)):\n            if self.cadeiras[i] == id:\n                self.cadeiras[i] = None\n                return\n        print(\"fail: cliente nao esta no cinema\")\n    \n    \n    def __str__(self) -> str:\n        traco = []\n        for i in range(len(self.cadeiras)):\n            if self.cadeiras[i] == None:\n                traco[i] = \"i\"\n            else:\n                traco[i] = self.cadeiras[i]\n        return f\"[{' '.join(traco)}]\"",
+            "lines": "47"
+        }
+    ]
+}
